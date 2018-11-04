@@ -1,12 +1,13 @@
 module Euler3 where
 -- based on https://stackoverflow.com/questions/21276844/prime-factors-in-haskell
-import Data.List
-
 import EulerProblem
 
 -- Key Lesson:
 -- Haskell allows recursive infinite lists to be shared between functions
 -- Recursive infinite lists are computed term-by-term back-and-forth
+--
+-- tail returns a list
+-- head returns an element of a list
 --
 -- General Strategy:
 -- Generate all primes as an infinite list, then use a recursive function
@@ -36,14 +37,14 @@ primeFactors :: Int -> [Int]
 --
 -- Each call to primes computes one more term, and each call happens
 -- after one iteration (one guard evaluation) of primeFactors
-primeFactors m = f m (head primes) (tail primes) where
+primeFactors em = f em (head primes) (tail primes) where
   f m n ns
     -- two is the first prime; algo counts down from n, so this is the stop condition
     | m < 2 = []
     -- m is smaller than the square of n, so can stop early because
     -- the algorithm will proceed with equivalent calculations for smaller factors;
     -- this prevents re-doing calculations for smaller factors 
-    | m < n ^ 2 = [m]
+    | m < n^(2::Int) = [m]
     -- n is a factor of m, so add n to the list, then find
     -- the factors of m/n
     | m `mod` n == 0 = n : f (m `div` n) n ns

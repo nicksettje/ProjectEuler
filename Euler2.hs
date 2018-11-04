@@ -13,10 +13,9 @@ answer2 :: Answer
 answer2 = show (sum (map oddToZero (takeWhile (<4000000) (map fibonacci [1..]))))
 
 fibonacci :: Integer -> Integer
-fibonacci n
-    | n == 0 = 0
-    | n == 1 = 1
-    | n == n = fibonacci(n-1) + fibonacci(n-2)
+fibonacci 0 = 0
+fibonacci 1 = 1
+fibonacci n = fibonacci(n-1) + fibonacci(n-2)
 
 oddToZero :: Integer -> Integer
 oddToZero n
