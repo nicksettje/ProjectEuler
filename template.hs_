@@ -1,0 +1,9 @@
+module EulerX where
+
+import EulerProblem
+
+questionX :: Question
+questionX = ""
+
+answerX :: Answer
+answerX = ""
