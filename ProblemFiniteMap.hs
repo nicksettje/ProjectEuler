@@ -12,6 +12,7 @@ import Euler7 (question7, answer7)
 import Euler8 (question8, answer8)
 import Euler9 (question9, answer9)
 import Euler10 (question10, answer10)
+import Euler11 (question11, answer11)
 
 problems :: Map [Char] Problem 
 problems = fromList
@@ -25,5 +26,6 @@ problems = fromList
      ("7", Problem question7 answer7),
      ("8", Problem question8 answer8),
      ("9", Problem question9 answer9),
-     ("10", Problem question10 answer10)
+     ("10", Problem question10 answer10),
+     ("11", Problem question11 answer11)
     ]
