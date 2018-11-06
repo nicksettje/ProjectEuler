@@ -1,9 +1,6 @@
 module Euler8 where
 
 import Data.Char (digitToInt)
-import Data.List.Split (chunksOf)
-import Data.List (scanl)
-import qualified System.IO.Streams as Streams
 import EulerProblem
 
 -- Key Lesson:
